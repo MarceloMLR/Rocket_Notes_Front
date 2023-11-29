@@ -1,7 +1,7 @@
 import {Container} from './styles'
 
 
-export const Button = (props) => {
+const Button = (props) => {
 
     const {title, loading = false, ...rest} = props
 
@@ -16,3 +16,4 @@ export const Button = (props) => {
     )
 }
 
+export default Button
