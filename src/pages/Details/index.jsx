@@ -3,6 +3,7 @@ import Header from "../../components/Header"
 import Button from "../../components/Button"
 import Section from "../../components/Section"
 import Tag from "../../components/Tag"
+import ButtonText from "../../components/ButtonText"
 
 
 
@@ -10,6 +11,9 @@ import Tag from "../../components/Tag"
   return (
     <Container>
       <Header/>
+
+      <ButtonText title="Excluir Nota"/>
+
       <Section title="Links úteis">
       <Links>
           <li>
