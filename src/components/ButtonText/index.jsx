@@ -1,9 +1,9 @@
 import { Container } from "./styles"
 
 
-const ButtonText = ({title}) => {
+const ButtonText = ({title, ...rest}) => {
   return (
-    <Container>
+    <Container type="button" {...rest}>
         {title}
     </Container>
   )
