@@ -12,7 +12,7 @@ export const Container = styled.div`
     "menu content"
     "newnote content";
 
-    background-color: ${({theme}) => theme.BACKGROUND_COLOR_800};
+    background-color: ${({theme}) => theme.COLORS.BACKGROUND_800};
     `
 
 export const Brand = styled.div`
@@ -22,7 +22,7 @@ export const Brand = styled.div`
     align-items: center;
     justify-content: center;
 
-    background-color: ${({theme}) => theme.BACKGROUND_COLOR_900};
+    background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
 
     border-bottom-width: 1px;
     border-bottom-style: solid;
@@ -37,6 +37,15 @@ export const Brand = styled.div`
 
 export const Menu = styled.ul`
     grid-area: menu;
+    
+    background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
+
+    padding-top: 6.4rem;
+    text-align: center;
+
+    > li {
+        margin-bottom: 2.4rem;
+    }
     
     `
 

@@ -1,9 +1,13 @@
 import { Container } from "./styles"
 
 
-const ButtonText = ({title, ...rest}) => {
+const ButtonText = ({title, isActive = "false", ...rest}) => {
   return (
-    <Container type="button" {...rest}>
+    <Container 
+    type="button"
+     {...rest}
+     $isactive={isActive.toString()}
+     >
         {title}
     </Container>
   )
