@@ -1,9 +1,9 @@
 import { Container } from "./styles"
 
 
-const Tag = ({title}) => {
+const Tag = ({title, ...rest}) => {
   return (
-    <Container>
+    <Container {...rest}>
       {title}
     </Container>
   )
