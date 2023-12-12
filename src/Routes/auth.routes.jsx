@@ -1,20 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import New from '../pages/New';
-import Details from '../pages/Details';
-import Profile from '../pages/Profile';
+import SignIn from '../pages/SignIn';
+import SignUp from '../pages/SignU';
 
 
-const AppRoutes = () => {
+const AuthRoutes = () => {
   return (
     <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/new' element={<New/>}/>
-        <Route path='/Details/:id' element={<Details/>}/>
-        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/' element={<SignIn/>}/>
+        <Route path='/register' element={<SignUp/>}/>
     </Routes>
   )
 }
 
-export default AppRoutes
+export default AuthRoutes
