@@ -4,6 +4,7 @@ import Input from "../../components/Input";
 import Textarea from "../../components/Textarea";
 import Section from "../../components/Section";
 import NoteItem from "../../components/NoteItem";
+import Button from "../../components/Button";
 
 const New = () => {
   return (
@@ -24,6 +25,15 @@ const New = () => {
             <NoteItem value="https://rocketseat.com.br" />
             <NoteItem isNew placeholder="Novo Link" />
           </Section>
+
+          <Section>
+            <div className="tags">
+              <NoteItem value="React" />
+              <NoteItem isNew placeholder="Nova tag" />
+            </div>
+          </Section>
+
+          <Button title="Salvar"/>
         </Form>
       </main>
     </Container>
