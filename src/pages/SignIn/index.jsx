@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Container, Form, Background } from './styles';
 import { FiLock, FiMail} from 'react-icons/fi'
 import { Link } from 'react-router-dom';
@@ -5,6 +6,9 @@ import Input from '../../components/Input'
 import Button from '../../components/Button'
 
 const SignIn = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <Container>
         <Form>
