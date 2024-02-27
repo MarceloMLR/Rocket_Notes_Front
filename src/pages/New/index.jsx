@@ -16,6 +16,10 @@ const New = () => {
     setLinks(prevState => [...prevState, newLink]);
     setNewLink("");
   }
+
+  function handleRemoveLink(deleted) {
+    setLinks(prevState => prevState.filter(link => link !== deleted))
+  }
   return (
     <Container>
       <Header />
@@ -37,7 +41,7 @@ const New = () => {
                 key={String(index)}
                   placeholder="Novo Link" 
                   value={link}
-                  onClick={() => {}}
+                  onClick={() => handleRemoveLink(link)}
                   />
               ))
             }
