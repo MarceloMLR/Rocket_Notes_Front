@@ -37,6 +37,16 @@ const New = () => {
   }
 
   async function handleNewNote() {
+    if(!title) {
+      alert("Você esqueceu de adicionar um titulo a sua nota.")
+    }
+    if(newTag) {
+      alert("Você esqueceu de clicar em adicionar uma tag")
+    }
+    
+    if(newLink) {
+      alert("Você esqueceu de clicar em adicionar um link")
+    }
     await api.post("/notes",{
       title,
       description,
