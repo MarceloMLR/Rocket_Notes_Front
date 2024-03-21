@@ -9,17 +9,28 @@ import Note from '../../components/Note'
 import { api } from '../../services/api'
 const Home = () => {
     const [tags, setTags] = useState([]);
+    const [tagsSelected, setTagsSelected] = useState([]);
+
+
+    function handleTagSelected(tagName){
+        const alreadySelected = tagsSelected.includes(tagName)
+        if (alreadySelected) {
+            const filteredTags = tagsSelected.filter(tag => tag !== tagName)
+            setTagsSelected(filteredTags)
+        } else {
+            setTagsSelected(prevState => [... prevState, tagName])
+        }
+        
+    }
 
     useEffect(() => {
         async function fetchTags() {
             const response = await api.get("/tags");
             setTags(response.data)
         };
-
         fetchTags();
     },[]);
 
-console.log(tags)
   return (
     <Container>
         <Brand>
@@ -30,11 +41,19 @@ console.log(tags)
 
         <Menu>
             <li>
-                <ButtonText title="Todos" isActive/>
+                <ButtonText 
+                title="Todos" 
+                onClick={() => handleTagSelected("all")}
+                isActive={tagsSelected.length === 0}
+                />
             </li>
             { tags && tags.map(tag => (
                 <li key={String(tag.id)}>
-                    <ButtonText title={tag.name}/>
+                    <ButtonText 
+                    title={tag.name}
+                    onClick={() => handleTagSelected(tag.name)}
+                    isActive={tagsSelected.includes(tag.name)}
+                    />
                 </li>
                 ))
             }
