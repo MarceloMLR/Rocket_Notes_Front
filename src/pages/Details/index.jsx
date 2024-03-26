@@ -17,6 +17,14 @@ import ButtonText from "../../components/ButtonText"
   const params = useParams();
   const navigate = useNavigate();
 
+ async function handleDelete() {
+    const confirm = window.confirm("Deseja realmente deletar essa nota?")
+    if (confirm) {
+      await api.delete(`/notes/${params.id}`)
+      navigate("/")
+    }
+  }
+
   function handleBack() {
     navigate("/")
   }
@@ -37,7 +45,10 @@ import ButtonText from "../../components/ButtonText"
         <Content>
 
       
-          <ButtonText title="Excluir Nota"/>
+          <ButtonText
+           title="Excluir Nota"
+           onClick={handleDelete}
+           />
 
           <h1>{data.title}</h1>
 
