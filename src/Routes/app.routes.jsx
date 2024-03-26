@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from '../pages/Home';
 import New from '../pages/New';
@@ -13,6 +13,7 @@ const AppRoutes = () => {
         <Route path='/New' element={<New/>}/>
         <Route path='/Details/:id' element={<Details/>}/>
         <Route path='/Profile' element={<Profile/>}/>
+        <Route path='*' element={<Navigate to="/"/>}/>
     </Routes>
   )
 }

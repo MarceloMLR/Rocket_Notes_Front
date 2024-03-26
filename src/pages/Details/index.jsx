@@ -21,12 +21,12 @@ import ButtonText from "../../components/ButtonText"
     const confirm = window.confirm("Deseja realmente deletar essa nota?")
     if (confirm) {
       await api.delete(`/notes/${params.id}`)
-      navigate("/")
+      navigate(-1)
     }
   }
 
   function handleBack() {
-    navigate("/")
+    navigate(-1)
   }
 
   useEffect(() =>{
