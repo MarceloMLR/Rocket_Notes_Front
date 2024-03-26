@@ -23,6 +23,7 @@ const Home = () => {
         if (alreadySelected) {
             const filteredTags = tagsSelected.filter(tag => tag !== tagName)
             setTagsSelected(filteredTags)
+            
         } else {
             setTagsSelected(prevState => [... prevState, tagName])
         }
@@ -42,8 +43,13 @@ const Home = () => {
     useEffect(
         () => {
             async function fetchNotes() {
-                const response = await api.get(`/notes?title=${search}&tags=${tagsSelected}`)
+                //Tratamento para caracteres especiais que tem função especifica na URL como #
+                const encodedTagsSelected = encodeURIComponent(tagsSelected);
+                const encodedSeach = encodeURIComponent(search);
+                const response = await api.get(`/notes?title=${encodedTagsSelected}&tags=${encodedSeach}`)
+                
                 setNotes(response.data)
+                
             }
 
             fetchNotes()
